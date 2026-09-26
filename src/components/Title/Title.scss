@@ -3,23 +3,23 @@
   font-size: 64px;
   line-height: 125%;
   letter-spacing: -0.02em;
+}
 
-  & + h2 {
-    font-size: 48px;
-    line-height: 117%;
-  }
+h2.title {
+  font-size: 48px;
+  line-height: 117%;
+}
 
-  & + h3 {
-    font-size: 32px;
-  }
+h3.title {
+  font-size: 32px;
+}
 
-  & + h4 {
-    font-size: 20px;
-    line-height: 160%;
-  }
+h4.title {
+  font-size: 20px;
+  line-height: 160%;
+}
 
-  & + h5 {
-    font-size: 16px;
-    line-height: 150%;
-  }
+h5.title {
+  font-size: 16px;
+  line-height: 150%;
 }
