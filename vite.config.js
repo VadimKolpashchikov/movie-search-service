@@ -10,14 +10,14 @@ export default defineConfig({
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
           @use "sass:color";
           @use "@/styles/_variables.scss" as *;
         `,
-        },
       },
     },
   },
