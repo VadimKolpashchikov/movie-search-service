@@ -12,7 +12,7 @@ function SearchForm({ onSearch }) {
     e.preventDefault();
     if (!searchString) return;
 
-    onSearch(searchString);
+    onSearch(searchString.trim());
     setSearchString('');
   };
 
