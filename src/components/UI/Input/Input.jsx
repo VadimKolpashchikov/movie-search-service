@@ -6,6 +6,7 @@ function Input({
   type = 'text',
   prepend,
   append,
+  value = '',
   onChange,
 }) {
   const rootClass = 'search-input';
@@ -29,11 +30,11 @@ function Input({
         {prepend}
 
         <input
+          value={value}
           type={type}
           name={name}
           placeholder={placeholder}
           onChange={onChange}
-          autocomplete="off"
         />
 
         {append}

@@ -1,0 +1,19 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 588px;
+  width: 100%;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+  }
+}
