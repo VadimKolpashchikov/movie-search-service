@@ -45,6 +45,10 @@ export default defineConfig([
         ignoreTemplateLiterals: true,
       }],
       '@stylistic/object-curly-newline': ['error', {
+        ObjectExpression: {
+          multiline: true,
+          consistent: true,
+        },
         ObjectPattern: {
           minProperties: 2,
           multiline: true,
