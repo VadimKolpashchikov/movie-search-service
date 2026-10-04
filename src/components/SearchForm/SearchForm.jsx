@@ -10,9 +10,10 @@ function SearchForm({ onSearch }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!searchString) return;
+    const query = searchString.trim();
 
-    onSearch(searchString.trim());
+    if (query) onSearch(query);
+
     setSearchString('');
   };
 
