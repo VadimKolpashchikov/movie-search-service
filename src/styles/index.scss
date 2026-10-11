@@ -17,13 +17,14 @@ body {
   background-position: 0px -160px;
   background-repeat: no-repeat;
   background-size: 100vw 250%;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray-color-50;
+}
 
-  * {
-    font-family: $font-family;
-    font-weight: 400;
-    font-size: 16px;
-    color: $gray-color-50;
-  }
+#root {
+  position: relative;
 }
 
 h1,
