@@ -1,7 +1,10 @@
 .header {
+  position: sticky;
+  top: 0;
   padding-block: 16px;
   backdrop-filter: blur(40px);
   background: $gray-color-800;
+  z-index: 10;
 
   &__wrap {
     display: flex;

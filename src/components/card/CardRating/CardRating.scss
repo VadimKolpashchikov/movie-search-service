@@ -1,0 +1,10 @@
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: $black-color-65;
+  color: $warning-color-500;
+  line-height: 15px;
+}

@@ -3,12 +3,13 @@ import './MainLayout.scss';
 
 function MainLayout({ children }) {
   return (
-    <div className="main-layout">
-      <Container>
-        {children}
-      </Container>
 
-    </div>
+    <Container>
+      <div className="main-layout">
+        {children}
+      </div>
+    </Container>
+
   );
 }
 
