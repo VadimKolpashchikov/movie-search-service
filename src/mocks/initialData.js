@@ -1,0 +1,76 @@
+export const cardListMock = [
+  {
+    id: 1,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 2,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 3,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+    inFavorite: true,
+  },
+  {
+    id: 4,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 5,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 6,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+    inFavorite: true,
+  },
+  {
+    id: 11,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 12,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 13,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 14,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 15,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+  {
+    id: 16,
+    title: 'Avengers: Endgame',
+    stars: 123,
+    image: 'images/image1.png',
+  },
+];
