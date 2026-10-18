@@ -1,4 +1,5 @@
-import './Button.scss';
+import cn from 'classnames';
+import styles from './Button.module.scss';
 
 function Button({
   type = 'button',
@@ -9,7 +10,7 @@ function Button({
   return (
     <button
       type={type}
-      className={`button button_${face}`}
+      className={cn(styles['button'], styles[`button_${face}`])}
       onClick={onClick}
     >
       {children}

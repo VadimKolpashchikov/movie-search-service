@@ -1,11 +1,11 @@
 import Container from '../Container/Container';
-import './MainLayout.scss';
+import styles from './MainLayout.module.scss';
 
 function MainLayout({ children }) {
   return (
 
     <Container>
-      <div className="main-layout">
+      <div className={styles['main-layout']}>
         {children}
       </div>
     </Container>

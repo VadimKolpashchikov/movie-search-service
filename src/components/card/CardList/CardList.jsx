@@ -1,5 +1,5 @@
 import Card from '../Card/Card';
-import './CardList.scss';
+import styles from './CardList.module.scss';
 
 function CardList({ cards }) {
   const addToFavorite = (cardId) => {
@@ -11,7 +11,7 @@ function CardList({ cards }) {
   };
 
   return (
-    <div className="card-list">
+    <div className={styles['card-list']}>
       {cards.map((card) => (
         <Card
           key={card.id}
