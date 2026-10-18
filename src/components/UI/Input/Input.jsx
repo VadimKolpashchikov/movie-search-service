@@ -1,4 +1,4 @@
-import './Input.scss';
+import styles from './Input.module.scss';
 
 function Input({
   name = 'input',
@@ -9,24 +9,15 @@ function Input({
   value = '',
   onChange,
 }) {
-  const rootClass = 'search-input';
-  const classes = (() => {
-    const result = [rootClass];
-
-    if (prepend) {
-      result.push(`${rootClass}_with-prepend`);
-    }
-
-    if (append) {
-      result.push(`${rootClass}_with-append`);
-    }
-
-    return result.join(' ');
-  })();
+  const classes = [
+    styles['input'],
+    prepend && styles['input_with-prepend'],
+    append && styles['input_with-append'],
+  ].filter(Boolean).join(' ');
 
   return (
     <label className={classes}>
-      <div className="search-input__wrap">
+      <div className={styles['input__wrap']}>
         {prepend}
 
         <input

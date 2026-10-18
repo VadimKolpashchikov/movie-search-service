@@ -1,11 +1,11 @@
-import './Title.scss';
+import styles from './Title.module.scss';
 
 function Title({
   children, level = 1,
 }) {
   const Tag = `h${level}`;
 
-  return <Tag className="title">{children}</Tag>;
+  return <Tag className={styles['title']}>{children}</Tag>;
 }
 
 export default Title;

@@ -1,40 +1,43 @@
 import Container from '../layout/Container/Container';
-import './Header.scss';
+import BookmarkSvg from '@svg/bookmark.svg?react';
+import UserSvg from '@svg/user.svg?react';
+import LoginSvg from '@svg/login.svg?react';
+import styles from './Header.module.scss';
 
 function Header() {
   const user = false;
 
   return (
-    <header className="header">
+    <header className={styles['header']}>
       <Container>
-        <div className="header__wrap">
-          <a href="#" className="header__logo">
-            <img src="/svg/bookmark.svg" alt="logo" />
+        <div className={styles['header__wrap']}>
+          <a href="#" className={styles['header__logo']}>
+            <BookmarkSvg width={40} height={40} />
           </a>
 
-          <div className="header__menu">
-            <a href="#" className="header__menu-item">
+          <div className={styles['header__menu']}>
+            <a href="#" className={styles['header__menu-item']}>
               Поиск фильмов
             </a>
-            <a href="#" className="header__menu-item">
+            <a href="#" className={styles['header__menu-item']}>
               Мои фильмы
             </a>
             {user
               ? (
                   <>
-                    <a href="#" className="header__menu-item">
+                    <a href="#" className={styles['header__menu-item']}>
                       UserName
-                      <img src="/svg/user.svg" alt="user" />
+                      <UserSvg />
                     </a>
-                    <a href="#" className="header__menu-item">
+                    <a href="#" className={styles['header__menu-item']}>
                       Выйти
                     </a>
                   </>
                 )
               : (
-                  <a href="#" className="header__menu-item">
+                  <a href="#" className={styles['header__menu-item']}>
                     Войти
-                    <img src="/svg/login.svg" alt="login" />
+                    <LoginSvg />
                   </a>
                 )}
           </div>

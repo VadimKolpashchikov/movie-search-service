@@ -2,7 +2,8 @@ import Title from '../UI/Title/Title';
 import Paragraph from '../UI/Paragraph/Paragraph';
 import Button from '../UI/Button/Button';
 import Input from '../UI/Input/Input';
-import './SearchForm.scss';
+import SearchSvg from '@svg/search.svg?react';
+import styles from './SearchForm.module.scss';
 import { useState } from 'react';
 
 function SearchForm({ onSearch }) {
@@ -18,8 +19,8 @@ function SearchForm({ onSearch }) {
   };
 
   return (
-    <div className="search-form">
-      <div className="search-form__head">
+    <div className={styles['search-form']}>
+      <div className={styles['search-form__head']}>
         <Title>Поиск</Title>
         <Paragraph>
           Введите название фильма, сериала или мультфильма для поиска и добавления
@@ -28,14 +29,14 @@ function SearchForm({ onSearch }) {
       </div>
 
       <form
-        className="search-form__form"
+        className={styles['search-form__form']}
         autoComplete="off"
         onSubmit={onSubmit}
       >
         <Input
           placeholder="Введите название"
           name="search"
-          prepend={<img src="svg/search.svg" alt="search-icon" />}
+          prepend={<SearchSvg />}
           value={searchString}
           onChange={({ target }) => setSearchString(target.value)}
         />

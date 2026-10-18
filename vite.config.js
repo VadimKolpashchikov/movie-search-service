@@ -1,5 +1,6 @@
 import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import babel from '@rolldown/plugin-babel';
+import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vite';
 import path from 'path';
 
@@ -9,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
+      '@svg': path.resolve(import.meta.dirname, './src/assets/svg'),
     },
   },
   css: {
@@ -20,5 +22,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
+  plugins: [react(), svgr(), babel({ presets: [reactCompilerPreset()] })],
 });
