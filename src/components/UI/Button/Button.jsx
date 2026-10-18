@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import styles from './Button.module.scss';
 
 function Button({
@@ -9,7 +10,7 @@ function Button({
   return (
     <button
       type={type}
-      className={`${styles['button']} ${styles[`button_${face}`]}`}
+      className={cn(styles['button'], styles[`button_${face}`])}
       onClick={onClick}
     >
       {children}

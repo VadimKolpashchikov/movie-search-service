@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import styles from './Input.module.scss';
 
 function Input({
@@ -9,14 +10,12 @@ function Input({
   value = '',
   onChange,
 }) {
-  const classes = [
-    styles['input'],
-    prepend && styles['input_with-prepend'],
-    append && styles['input_with-append'],
-  ].filter(Boolean).join(' ');
-
   return (
-    <label className={classes}>
+    <label className={cn(styles.input, {
+      [styles['input_with-prepend']]: prepend,
+      [styles['input_with-append']]: append,
+    })}
+    >
       <div className={styles['input__wrap']}>
         {prepend}
 
