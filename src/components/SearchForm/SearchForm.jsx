@@ -6,14 +6,14 @@ import SearchSvg from '@svg/search.svg?react';
 import styles from './SearchForm.module.scss';
 import { useState } from 'react';
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSubmit }) {
   const [searchString, setSearchString] = useState('');
 
-  const onSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     const query = searchString.trim();
 
-    if (query) onSearch(query);
+    if (query) onSubmit(query);
 
     setSearchString('');
   };
@@ -31,7 +31,7 @@ function SearchForm({ onSearch }) {
       <form
         className={styles['search-form__form']}
         autoComplete="off"
-        onSubmit={onSubmit}
+        onSubmit={submitHandler}
       >
         <Input
           placeholder="Введите название"

@@ -8,6 +8,7 @@ function Input({
   prepend,
   append,
   value = '',
+  ref,
   onChange,
 }) {
   return (
@@ -24,6 +25,7 @@ function Input({
           type={type}
           name={name}
           placeholder={placeholder}
+          ref={ref}
           onChange={onChange}
         />
 
