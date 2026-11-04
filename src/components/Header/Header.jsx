@@ -4,9 +4,9 @@ import UserSvg from '@svg/user.svg?react';
 import LoginSvg from '@svg/login.svg?react';
 import styles from './Header.module.scss';
 
-function Header() {
-  const user = false;
-
+function Header({
+  user, onLogout,
+}) {
   return (
     <header className={styles['header']}>
       <Container>
@@ -22,14 +22,18 @@ function Header() {
             <a href="#" className={styles['header__menu-item']}>
               Мои фильмы
             </a>
-            {user
+            {user?.isLogged
               ? (
                   <>
                     <a href="#" className={styles['header__menu-item']}>
-                      UserName
+                      {user.name}
                       <UserSvg />
                     </a>
-                    <a href="#" className={styles['header__menu-item']}>
+                    <a
+                      href="#"
+                      className={styles['header__menu-item']}
+                      onClick={() => { onLogout(); }}
+                    >
                       Выйти
                     </a>
                   </>
