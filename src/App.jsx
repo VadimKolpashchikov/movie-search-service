@@ -7,32 +7,20 @@ import { cardListMock } from './mocks/initialData.js';
 import { useUserLogin } from './hooks/useUserLogin.hook.js';
 
 function App() {
-  const [user, setUser] = useUserLogin();
+  const {
+    user, login, logout,
+  } = useUserLogin();
 
   const onSearch = (searchString) => {
     console.log(searchString);
   };
 
-  const onLogin = (name) => {
-    setUser({
-      name,
-      isLogged: true,
-    });
-  };
-
-  const onLogout = () => {
-    setUser((prev) => ({
-      ...prev,
-      isLogged: false,
-    }));
-  };
-
   return (
     <>
-      <Header user={user} onLogout={onLogout} />
+      <Header user={user} onLogout={logout} />
 
       <MainLayout>
-        <LoginForm onSubmit={onLogin} />
+        <LoginForm onSubmit={login} />
 
         <SearchForm onSubmit={onSearch} />
 

@@ -44,19 +44,20 @@ export default defineConfig([
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
       }],
+      '@stylistic/object-property-newline': ['error', {
+        allowAllPropertiesOnSameLine: true,
+      }],
       '@stylistic/object-curly-newline': ['error', {
         ObjectExpression: {
+          minProperties: 3,
           multiline: true,
           consistent: true,
         },
         ObjectPattern: {
-          minProperties: 2,
+          minProperties: 3,
           multiline: true,
           consistent: true,
         },
-      }],
-      '@stylistic/object-property-newline': ['error', {
-        allowAllPropertiesOnSameLine: false,
       }],
     },
   },
