@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/index.scss';
 import App from './App.jsx';
-import UserContextProvider from './components/context/USerContextProvider.jsx';
+import UserContextProvider from './components/context/UserContextProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
