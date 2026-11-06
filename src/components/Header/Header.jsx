@@ -3,10 +3,12 @@ import BookmarkSvg from '@svg/bookmark.svg?react';
 import UserSvg from '@svg/user.svg?react';
 import LoginSvg from '@svg/login.svg?react';
 import styles from './Header.module.scss';
+import { useContext } from 'react';
+import { UserContext } from '../../context/user.context';
 
-function Header({
-  user, onLogout,
-}) {
+function Header() {
+  const { user, logout } = useContext(UserContext);
+
   return (
     <header className={styles['header']}>
       <Container>
@@ -32,7 +34,7 @@ function Header({
                     <a
                       href="#"
                       className={styles['header__menu-item']}
-                      onClick={() => { onLogout(); }}
+                      onClick={logout}
                     >
                       Выйти
                     </a>

@@ -4,27 +4,30 @@ import LoginForm from './components/LoginForm/LoginForm.jsx';
 import CardList from './components/card/CardList/CardList.jsx';
 import MainLayout from './components/layout/MainLayout/MainLayout.jsx';
 import { cardListMock } from './mocks/initialData.js';
-import { useUserLogin } from './hooks/useUserLogin.hook.js';
+import { useContext } from 'react';
+import { UserContext } from './context/user.context.js';
 
 function App() {
-  const {
-    user, login, logout,
-  } = useUserLogin();
+  const { user } = useContext(UserContext);
 
   const onSearch = (searchString) => {
     console.log(searchString);
   };
 
+  const currentTemplate = user
+    ? (
+        <>
+          <SearchForm onSubmit={onSearch} />
+          <CardList cards={cardListMock} />
+        </>
+      )
+    : (<LoginForm />);
+
   return (
     <>
-      <Header user={user} onLogout={logout} />
-
+      <Header />
       <MainLayout>
-        <LoginForm onSubmit={login} />
-
-        <SearchForm onSubmit={onSearch} />
-
-        <CardList cards={cardListMock} />
+        {currentTemplate}
       </MainLayout>
     </>
   );
