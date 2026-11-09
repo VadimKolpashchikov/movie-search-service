@@ -1,4 +1,6 @@
-export const cardListMock = [
+import type { ICard } from '@/types/Card.type';
+
+export const cardListMock: ICard[] = [
   {
     id: 1,
     title: 'Avengers: Endgame',

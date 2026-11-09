@@ -4,16 +4,20 @@ import Button from '../UI/Button/Button';
 import Input from '../UI/Input/Input';
 import SearchSvg from '@svg/search.svg?react';
 import styles from './SearchForm.module.scss';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
+import cn from 'classnames';
+import type { SearchFormProps } from './SearchForm.props';
 
-function SearchForm({ onSubmit }) {
-  const [searchString, setSearchString] = useState('');
+function SearchForm({
+  onSearch, className, ...props
+}: SearchFormProps) {
+  const [searchString, setSearchString] = useState<string>('');
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const query = searchString.trim();
 
-    if (query) onSubmit(query);
+    if (query) onSearch(query);
 
     setSearchString('');
   };
@@ -29,7 +33,8 @@ function SearchForm({ onSubmit }) {
       </div>
 
       <form
-        className={styles['search-form__form']}
+        {...props}
+        className={cn(styles['search-form__form'], className)}
         autoComplete="off"
         onSubmit={submitHandler}
       >

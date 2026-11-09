@@ -1,16 +1,12 @@
 import cn from 'classnames';
 import styles from './Input.module.scss';
+import type { InputProps } from './Input.props';
 
 function Input({
-  name = 'input',
-  placeholder,
-  type = 'text',
   prepend,
   append,
-  value = '',
-  ref,
-  onChange,
-}) {
+  ...props
+}: InputProps) {
   return (
     <label className={cn(styles.input, {
       [styles['input_with-prepend']]: prepend,
@@ -19,16 +15,7 @@ function Input({
     >
       <div className={styles['input__wrap']}>
         {prepend}
-
-        <input
-          value={value}
-          type={type}
-          name={name}
-          placeholder={placeholder}
-          ref={ref}
-          onChange={onChange}
-        />
-
+        <input {...props} />
         {append}
       </div>
     </label>

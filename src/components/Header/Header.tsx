@@ -4,7 +4,7 @@ import UserSvg from '@svg/user.svg?react';
 import LoginSvg from '@svg/login.svg?react';
 import styles from './Header.module.scss';
 import { useContext } from 'react';
-import { UserContext } from '../../context/user.context';
+import UserContext from '../../context/user/UserContext';
 
 function Header() {
   const { user, logout } = useContext(UserContext);

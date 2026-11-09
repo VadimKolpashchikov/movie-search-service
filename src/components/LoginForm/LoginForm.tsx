@@ -2,14 +2,14 @@ import Title from '../UI/Title/Title';
 import Button from '../UI/Button/Button';
 import Input from '../UI/Input/Input';
 import styles from './LoginForm.module.scss';
-import { useContext, useState } from 'react';
-import { UserContext } from '../../context/user.context';
+import { useContext, useState, type FormEvent } from 'react';
+import UserContext from '../../context/user/UserContext';
 
 function SearchForm() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState<string>('');
   const { login } = useContext(UserContext);
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const query = name.trim();
 

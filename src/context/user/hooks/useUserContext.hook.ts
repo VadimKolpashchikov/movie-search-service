@@ -1,25 +1,28 @@
 import { useState } from 'react';
+import type { UserType, IUserContext } from '../UserContext.type';
+
+type ProfilesType = UserType[];
 
 const STORAGE_PROFILES_KEY = 'profiles';
 
-const getProfiles = () => {
+const getProfiles = (): ProfilesType => {
   const data = localStorage.getItem(STORAGE_PROFILES_KEY);
   return data ? JSON.parse(data) : [];
 };
 
-const setProfiles = (profiles) => {
+const setProfiles = (profiles: ProfilesType) => {
   localStorage.setItem(STORAGE_PROFILES_KEY, JSON.stringify(profiles));
 };
 
-export function useUserLogin() {
-  const [user, setUser] = useState(() => {
+export function useUserContext(): IUserContext {
+  const [user, setUser] = useState<UserType | null>(() => {
     const profiles = getProfiles();
     return profiles.find((p) => p.isLogged) ?? null;
   });
 
-  const login = (name) => {
+  const login = (name: UserType['name']): void => {
     const profiles = getProfiles();
-    const updatedProfiles = profiles.reduce((acc, p) => {
+    const updatedProfiles = profiles.reduce<ProfilesType>((acc, p) => {
       if (p.name !== name) {
         acc.push({ ...p, isLogged: false });
       }
@@ -33,7 +36,7 @@ export function useUserLogin() {
     setUser(newProfile);
   };
 
-  const logout = () => {
+  const logout = (): void => {
     const profiles = getProfiles();
     const updatedProfiles = profiles.map((p) => ({ ...p, isLogged: false }));
 

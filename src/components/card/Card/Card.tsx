@@ -1,14 +1,18 @@
 import CardFavoriteButton from '../CardFavoriteButton/CardFavoriteButton';
 import CardRating from '../CardRating/CardRating';
 import styles from './Card.module.scss';
+import type { CardProps } from './Card.props';
 
 function Card({
   data, addToFavorite, removeFromFavorite,
-}) {
+}: CardProps) {
   const clickHandler = () => {
-    data.inFavorite
-      ? removeFromFavorite(data.id)
-      : addToFavorite(data.id);
+    if (data.inFavorite) {
+      removeFromFavorite(data.id);
+      return;
+    }
+
+    addToFavorite(data.id);
   };
 
   return (

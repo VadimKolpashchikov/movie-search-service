@@ -45,7 +45,7 @@
     line-height: 114%;
     color: $gray-color-50;
 
-    &:placeholder {
+    &::placeholder {
       color: $gray-color-600;
     }
   }
