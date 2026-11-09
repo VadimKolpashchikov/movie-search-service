@@ -1,10 +1,11 @@
+import cn from 'classnames';
 import CardFavoriteButton from '../CardFavoriteButton/CardFavoriteButton';
 import CardRating from '../CardRating/CardRating';
 import styles from './Card.module.scss';
 import type { CardProps } from './Card.props';
 
 function Card({
-  data, addToFavorite, removeFromFavorite,
+  data, addToFavorite, removeFromFavorite, className, ...props
 }: CardProps) {
   const clickHandler = () => {
     if (data.inFavorite) {
@@ -16,7 +17,7 @@ function Card({
   };
 
   return (
-    <div className={styles.card}>
+    <div {...props} className={cn(styles.card, className)}>
       <div className={styles['card__image-wrap']}>
         <div className={styles['card__stars']}>
           <CardRating>{data.stars}</CardRating>

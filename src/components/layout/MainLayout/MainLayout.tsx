@@ -1,8 +1,7 @@
-import type { ComponentProps } from 'react';
 import Container from '../Container/Container';
 import styles from './MainLayout.module.scss';
 
-function MainLayout({ children }: ComponentProps<typeof Container>) {
+function MainLayout({ children }: { children?: React.ReactNode }) {
   return (
     <Container>
       <div className={styles['main-layout']}>

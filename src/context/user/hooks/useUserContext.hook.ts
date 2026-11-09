@@ -5,9 +5,27 @@ type ProfilesType = UserType[];
 
 const STORAGE_PROFILES_KEY = 'profiles';
 
+const isUser = (data: unknown): data is UserType => {
+  return data !== null
+    && typeof data === 'object'
+    && 'name' in data
+    && 'isLogged' in data;
+};
+
+const isProfiles = (data: unknown): data is ProfilesType => {
+  return Array.isArray(data) && data.every(isUser);
+};
+
 const getProfiles = (): ProfilesType => {
-  const data = localStorage.getItem(STORAGE_PROFILES_KEY);
-  return data ? JSON.parse(data) : [];
+  const dataRaw = localStorage.getItem(STORAGE_PROFILES_KEY);
+
+  if (dataRaw) {
+    const data = JSON.parse(dataRaw);
+
+    if (isProfiles(data)) return data;
+  }
+
+  return [];
 };
 
 const setProfiles = (profiles: ProfilesType) => {
