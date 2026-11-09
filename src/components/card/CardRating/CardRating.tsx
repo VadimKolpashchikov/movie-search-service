@@ -1,7 +1,7 @@
 import StarSvg from '@svg/star.svg?react';
 import styles from './CardRating.module.scss';
 
-function CardRating({ children }) {
+function CardRating({ children }: { children?: React.ReactNode }) {
   return (
     <div className={styles['card-rating']}>
       <StarSvg />

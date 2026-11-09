@@ -2,6 +2,8 @@ import BookmarkSvg from '@svg/bookmark.svg?react';
 import LikeSvg from '@svg/like.svg?react';
 import styles from './CardFavoriteButton.module.scss';
 import cn from 'classnames';
+import type { MouseEvent } from 'react';
+import type { CardFavoriteButtonProps } from './CardFavoriteButton.props';
 
 const activeTemplate = (
   <>
@@ -20,10 +22,10 @@ const inactiveTemplate = (
 function CardFavoriteButton({
   active = false,
   onClick,
-}) {
-  const clickHandler = (e) => {
+}: CardFavoriteButtonProps) {
+  const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    onClick(e);
+    onClick?.(e);
   };
 
   return (
