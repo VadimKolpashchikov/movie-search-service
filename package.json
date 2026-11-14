@@ -12,7 +12,8 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-router": "^8.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -23,6 +24,7 @@
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/react-router": "^5.1.20",
     "@vitejs/plugin-react": "^6.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^10.14.0",

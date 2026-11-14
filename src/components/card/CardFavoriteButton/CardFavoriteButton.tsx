@@ -25,6 +25,7 @@ function CardFavoriteButton({
 }: CardFavoriteButtonProps) {
   const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
+    e.preventDefault();
     onClick?.(e);
   };
 

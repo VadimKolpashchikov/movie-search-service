@@ -5,7 +5,7 @@ import styles from './LoginForm.module.scss';
 import { useContext, useState, type FormEvent } from 'react';
 import UserContext from '../../context/user/UserContext';
 
-function SearchForm() {
+function LoginForm() {
   const [name, setName] = useState<string>('');
   const { login } = useContext(UserContext);
 
@@ -43,4 +43,4 @@ function SearchForm() {
   );
 }
 
-export default SearchForm;
+export default LoginForm;

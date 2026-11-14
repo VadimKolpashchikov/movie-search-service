@@ -1,6 +1,8 @@
+import { Link } from 'react-router';
 import Card from '../Card/Card';
 import styles from './CardList.module.scss';
 import type { CardListProps } from './CardList.props';
+import routes from '@/router/routes';
 
 type CardId = CardListProps['cards'][number]['id'];
 
@@ -16,12 +18,13 @@ function CardList({ cards }: CardListProps) {
   return (
     <div className={styles['card-list']}>
       {cards.map((card) => (
-        <Card
-          key={card.id}
-          data={card}
-          addToFavorite={addToFavorite}
-          removeFromFavorite={removeFromFavorite}
-        />
+        <Link to={routes.movie.path.replace(':id', String(card.id))} key={card.id}>
+          <Card
+            data={card}
+            addToFavorite={addToFavorite}
+            removeFromFavorite={removeFromFavorite}
+          />
+        </Link>
       ))}
     </div>
   );
