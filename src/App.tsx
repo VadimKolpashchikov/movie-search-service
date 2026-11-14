@@ -2,7 +2,7 @@ import Header from './components/Header/Header.js';
 import SearchForm from './components/SearchForm/SearchForm.js';
 import LoginForm from './components/LoginForm/LoginForm.js';
 import CardList from './components/card/CardList/CardList.js';
-import MainLayout from './components/layout/MainLayout/MainLayout.js';
+import MainLayout from './layouts/ColumnLayout/ColumnLayout.js';
 import { cardListMock } from './mocks/initialData';
 import { useContext } from 'react';
 import UserContext from './context/user/UserContext';
