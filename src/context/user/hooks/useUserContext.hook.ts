@@ -40,17 +40,10 @@ export function useUserContext(): IUserContext {
 
   const login = (name: UserType['name']): void => {
     const profiles = getProfiles();
-    const updatedProfiles = profiles.reduce<ProfilesType>((acc, p) => {
-      if (p.name !== name) {
-        acc.push({ ...p, isLogged: false });
-      }
-
-      return acc;
-    }, []);
-
+    const filteredProfiles = profiles.filter((p) => p.name !== name);
     const newProfile = { name, isLogged: true };
 
-    setProfiles([newProfile, ...updatedProfiles]);
+    setProfiles([newProfile, ...filteredProfiles]);
     setUser(newProfile);
   };
 
