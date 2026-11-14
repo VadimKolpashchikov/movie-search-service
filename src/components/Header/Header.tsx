@@ -42,7 +42,7 @@ function Header() {
 
           <div className={styles['header__menu']}>
             {filteredLinks.map((link) => (
-              <NavLink to={link.path} className={({ isActive }) => cn(
+              <NavLink key={link.path} to={link.path} className={({ isActive }) => cn(
                 styles['header__menu-item'],
                 { [styles['active']]: isActive },
               )}
