@@ -4,10 +4,13 @@ import Input from '../UI/Input/Input';
 import styles from './LoginForm.module.scss';
 import { useContext, useState, type FormEvent } from 'react';
 import UserContext from '../../context/user/UserContext';
+import routes from '@/router/routes';
+import { useNavigate } from 'react-router';
 
 function LoginForm() {
   const [name, setName] = useState<string>('');
   const { login } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,9 +18,8 @@ function LoginForm() {
 
     if (query) {
       login(query);
+      navigate(routes.movies.path);
     }
-
-    setName('');
   };
 
   return (
