@@ -21,7 +21,7 @@ export default function MoviesPage() {
       await new Promise((resolve) => {
         setTimeout(resolve, 500);
       });
-      // НЕ РАБОТАЕТ!
+      // @TODO нужны рабочие ручки
       const { data } = await axios.get<IMovie[]>(`${OMDB_PREFIX}/search?q=${query}`);
 
       if (Array.isArray(data)) {
@@ -33,7 +33,7 @@ export default function MoviesPage() {
       setError(e);
     }
     setIsLoading(false);
-  }, []);
+  }, [query]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
