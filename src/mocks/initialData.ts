@@ -1,6 +1,6 @@
-import type { ICard } from '@/types/Card.type';
+import type { IMovie } from '@/types/Movie.type';
 
-export const cardListMock: ICard[] = [
+export const cardListMock: IMovie[] = [
   {
     id: 1,
     title: 'Avengers: Endgame',

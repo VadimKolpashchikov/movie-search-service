@@ -1,8 +1,8 @@
-import type { ICard } from '@/types/Card.type';
+import type { IMovie } from '@/types/Movie.type';
 import type { ComponentProps } from 'react';
 
 export interface CardProps extends ComponentProps<'div'> {
-  data: ICard;
-  addToFavorite: (id: ICard['id']) => void;
-  removeFromFavorite: (id: ICard['id']) => void;
+  data: IMovie;
+  addToFavorite: (id: IMovie['id']) => void;
+  removeFromFavorite: (id: IMovie['id']) => void;
 }

@@ -1,6 +1,22 @@
 .paragraph {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
   color: $gray-color-300;
+
+  &_size {
+    &-m {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &-l {
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &-xl {
+      font-size: 20px;
+      line-height: 32px;
+      color: $gray-color-400;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-export interface ICard {
+export interface IMovie {
   id: number;
   title: string;
   stars: number;
